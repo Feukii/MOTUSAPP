@@ -37,8 +37,9 @@ app.get('/callback',(req,res)=>{
 app.use(function (req, res, next){
   if(req.session.user) {
    next()
+   console.log("connecté")
   }else{
-    console.log("erreur")
+    console.log("pas conecté")
     res.redirect('http://localhost:4000/login.html')
   }
 })

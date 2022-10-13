@@ -15,19 +15,10 @@
 <body>
    <h1>CREATION DE COMPTE</h1>
     <div>
-     <form action="/signup" method="post">
-
-      <center>
-        <div class="form-group">
-          <label for="exampleInputName1">Nom</label>
-          <input type="text" class="form-control" id="name"  placeholder="Enter name">
-        </div>
-        <div class="form-group">
-          <label for="passwordName1">MOt de Passe</label>
-          <input type="password" class="form-control" id="password" placeholder="Enter password">
-        </div>
-        <button type="submit" class="btn btn-primary" id="signup">Envoyer</button>
-       </center>
+      <form action="/signup" method="post">
+        <input name="username" id="username">
+        <input name="password" type="password"  id="password">
+        <input type="submit" value="se connecter">
       </form>
     </div>
 </body>
@@ -45,7 +36,5 @@
     */
     
 </script>
-
-<script src="signup.js"></script>
 
 </html>
