@@ -13,11 +13,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
-   <h1>CONNEXION</h1>
+   <h1>CREATION DE COMPTE</h1>
     <div>
-     <form>
+     <form action="/signup" method="post">
 
-        <center>
+      <center>
         <div class="form-group">
           <label for="exampleInputName1">Nom</label>
           <input type="text" class="form-control" id="name"  placeholder="Enter name">
@@ -26,13 +26,14 @@
           <label for="passwordName1">MOt de Passe</label>
           <input type="password" class="form-control" id="password" placeholder="Enter password">
         </div>
-        <button type="submit" class="btn btn-primary" id="connexion">Envoyer</button>
+        <button type="submit" class="btn btn-primary" id="signup">Envoyer</button>
        </center>
       </form>
     </div>
 </body>
+
 <script>
-  
+  /*
     $("form").submit(function(e){
         e.preventDefault()
         var name = document.getElementById("name").value
@@ -41,9 +42,10 @@
         console.log(localStorage.getItem("name"))
         document.location="index.html"
     })
-    
-    
+    */
     
 </script>
+
+<script src="signup.js"></script>
 
 </html>
