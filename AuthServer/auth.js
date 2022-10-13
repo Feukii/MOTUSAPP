@@ -1,5 +1,9 @@
 const express = require('express')
+const dotenv = require('dotenv');
+const jwt = require('jsonwebtoken');
 const app = express()
+// Set up Global configuration access
+dotenv.config();
 const port = process.env.PORT || 4000
 var fs = require('fs');
 
@@ -49,7 +53,21 @@ console.log(users)
         console.log("c")
         console.log(users)
           //fs.writeFileSync('./model/users.json', donnees)
-        token = req.body.username;
+          let jwtSecretKey = process.env.JWT_SECRET_KEY;
+          let datas = {
+              time: Date(),
+              userName: req.body.username,
+          }
+        
+          const token = jwt.sign(datas, jwtSecretKey);
+        
+          //res.send(token);
+
+
+        console.log(token)
+
+
+        //token = req.body.username;
         res.redirect('http://localhost:3000/callback?token='+token)
 
      }else
@@ -91,9 +109,22 @@ var oklogin=0
     res.redirect('/login.html')
 
   }else {
-    token = req.body.username;
-      res.redirect('http://localhost:3000/callback?token='+token)
+      let jwtSecretKey2 = process.env.JWT_SECRET_KEY;
+      let datas2= {
+          time: Date(),
+          userName: req.body.username,
+      }
+    
+      const token = jwt.sign(datas2, jwtSecretKey2);
+    
+      //res.send(token);
 
+
+    console.log(token)
+
+
+    //token = req.body.username;
+    res.redirect('http://localhost:3000/callback?token='+token)
   }
   
 })

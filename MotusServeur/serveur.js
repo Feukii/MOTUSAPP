@@ -1,6 +1,8 @@
 const express = require('express')
 const app = express()
 const path = require('path')
+const dotenv = require('dotenv');
+const jwt = require('jsonwebtoken');
 const sessionStorage = require('sessionstorage-for-nodejs');
 
 var ls = require('local-storage');
@@ -26,10 +28,23 @@ app.use(sessions({
 
 
 app.get('/callback',(req,res)=>{
-  
-  req.session.user = req.query.token;
+  token=req.query.token;
 
-  res.redirect('/')
+
+  payload = jwt.verify(token, "gfg_jwt_secret_key")
+  console.log(payload)
+  if(payload) {
+    req.session.user = req.query.token;
+    res.redirect('/')
+    // return res.send("JWT ok")
+  }else {
+    // Access Denied
+    return res.status(401).send(error);
+
+  }
+  
+
+  
 })
 
 
