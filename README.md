@@ -1,4 +1,4 @@
-```mmermaid
+```mermaid
 sequenceDiagram
     participant Alice
     participant Bob
