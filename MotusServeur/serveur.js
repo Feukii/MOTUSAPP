@@ -7,7 +7,7 @@ const sessionStorage = require('sessionstorage-for-nodejs');
 
 var ls = require('local-storage');
 const sessions = require('express-session')
-
+payload =''
 const port = process.env.PORT || 3000
 //const port2 = 3001
 
@@ -35,19 +35,21 @@ app.get('/callback',(req,res)=>{
   console.log(payload)
   if(payload) {
     req.session.user = req.query.token;
+    
+    //res.send(payload)
     res.redirect('/')
-    // return res.send("JWT ok")
   }else {
     // Access Denied
     return res.status(401).send(error);
 
-  }
-  
+  }  
 
   
 })
 
-
+app.get('/sendUser', (req, res) => {
+  res.send(payload)
+})
 
 app.use(function (req, res, next){
   if(req.session.user) {

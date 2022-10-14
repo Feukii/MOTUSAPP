@@ -76,7 +76,7 @@
 </head>
 
 <body>
-
+    <a href="http://localhost:5000" id="score">SCORE</a>
 
     <div id="global">
     
@@ -91,10 +91,6 @@
 
 </body>
 <script>
-
-    if (localStorage.getItem("name") == null) {
-     document.location = "/login.html" 
-    }
 
 
     var mot = ""
@@ -183,6 +179,7 @@
             document.getElementById("sutom").appendChild(tbl) 
             tbl.setAttribute("border", "1") 
    }
+
 }
     
 function moveOnMax(s){
@@ -190,7 +187,30 @@ function moveOnMax(s){
         s.blur();
        }
     }
-</script>
 
+/*
+   $("#score").click(function () {
+      $.post("http://localhost:5000/setScore",
+         {
+            name: "viSion",
+            designation: "Professional gamer"
+         },
+         function (data, status) {
+            console.log(data);
+         });
+   });
+   */
+
+  $.get('/sendUser', function(data) {
+    fetch('http://localhost:5000/setScore/?username='+data.userName  + '&score=' + 2)
+  })
+  
+
+
+</script>
+<script>
+
+  
+</script>
 
 </html>
