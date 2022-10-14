@@ -42,7 +42,7 @@ sequenceDiagram
 
 4.Next steps
 
-les prochaines étapes seraient d'améliorer la page jeu de sorte à ce que la redirection d'une case àl'autre pour entrer les lettres du mot soit automatique.	
+les prochaines étapes seraient d'améliorer la page jeu de sorte à ce que la redirection d'une case àl'autre pour entrer les lettres du mot soit automatique
 
 
 
