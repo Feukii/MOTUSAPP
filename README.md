@@ -1,8 +1,5 @@
 ```mermaid
 	sequenceDiagram
-	    
-
-	sequenceDiagram
 	    CLIENT->>+MOTUS: 
 	    MOTUS->>+CLIENT: 
 	    CLIENT->>+AUTH: 
@@ -13,7 +10,4 @@
 	    CLIENT->>+CLIENT: Essais, score
 	    CLIENT->>+SCORE: score
 	    SCORE->>+CLIENT: score
-
-
-
 ```
