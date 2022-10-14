@@ -10,6 +10,12 @@ Cette application comporte 3 serveurs :
 
 2.comment lancer l'application?
 
+
+sudo docker-compose up --build
+
+
+
+
 Trois dossiers ont été créés (MotusServeur, AuthServeur et Score) donc chacun correspond à un microservice. IL ya aussi 3 Dockerfile pour chaque microservice qui permettent chacun de lancer un serveur.
 On a le fichier docker-compose.yml qui permet de lancer les 3 serveurs en exécutant la commande docker-compose up. Si nous allons sur un navigateur (Chrome, edge, etc.) et que nous entrons localhost:3000(qui est le port sur lequel tourne le serveur Motus), on est automatiquement rédirigé vers le port 4000 sur lequel tourne le serveur d'authentification si l'utilisateur n'est pas connecté.
 Une page de connexion s'affiche et il peut se connecter en entrant ses identifiants. Si l'utilisateur tente de se connecter en entrant ses identifiants username et mot de passe, si il existe dans la liste des utilisateurs qui se trouve dans un fichier JSON, il est redirigé vers le port 3000 ou il peut entrer le mot du jour, si non il devra retenter la connexion. Si le mot du jour est correct l'utilisateur a plus un dans son score qui est stocké dans le serveur Score.
